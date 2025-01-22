@@ -8,6 +8,16 @@ declare global {
         axios: AxiosInstance;
     }
 
+    type Club = {
+        id: ?number;
+        name: string;
+        description: string;
+        address: string;
+        main_colour: string;
+        secondary_colour: string;
+    }
+
+
     /* eslint-disable no-var */
     var route: typeof ziggyRoute;
 }

@@ -21,7 +21,9 @@ class ClubController extends Controller
      */
     public function create()
     {
-        //
+        return inertia("Club/Create", [
+            'club' => new Club()
+        ]);
     }
 
     /**
