@@ -12,6 +12,6 @@ class ClubSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+
     }
 }

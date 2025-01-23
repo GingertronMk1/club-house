@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreClubRequest;
 use App\Http\Requests\UpdateClubRequest;
 use App\Models\Club;
+use Inertia\Inertia;
 
 class ClubController extends Controller
 {
@@ -13,7 +14,9 @@ class ClubController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('Club/ClubIndex', [
+            'clubs' => Club::all()
+        ]);
     }
 
     /**

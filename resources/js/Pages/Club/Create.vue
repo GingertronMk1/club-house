@@ -4,7 +4,7 @@ defineProps<{club: Club}>();
 </script>
 
 <template>
-    <ClubForm :club="club" />
+  <ClubForm :club="club" />
 </template>
 
 <style scoped>

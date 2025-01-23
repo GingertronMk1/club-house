@@ -25,6 +25,9 @@ echo "NPM Build"
 echo "Generate Key"
 ./vendor/bin/sail artisan key:generate
 
+echo "Create DB file"
+touch database/database.sqlite
+
 echo "Migrate"
 ./vendor/bin/sail artisan migrate:fresh
 
