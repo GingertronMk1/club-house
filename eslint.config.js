@@ -2,6 +2,7 @@ import globals from "globals";
 import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 import pluginVue from "eslint-plugin-vue";
+import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 
 /** @type {import("eslint").Linter.Config[]} */
 export default [
@@ -21,12 +22,13 @@ export default [
     pluginJs.configs.recommended,
     ...tseslint.configs.recommended,
     ...pluginVue.configs["flat/recommended"],
+    eslintPluginPrettierRecommended,
     {
         files: ["**/*.vue"],
         languageOptions: {
             globals: {
                 Club: "readonly",
-                route: "readonly"
+                route: "readonly",
             },
             parserOptions: { parser: tseslint.parser },
         },
