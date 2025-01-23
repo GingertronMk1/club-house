@@ -15,12 +15,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        if (!App::isProduction()) {
+        if (! App::isProduction()) {
             User::factory()->create([
                 'name' => 'Admin',
                 'email' => 'admin@clubhouse.local',
                 'password' => 12345,
-                'is_site_admin' => true
+                'is_site_admin' => true,
             ]);
         }
 

@@ -17,11 +17,11 @@ class ClubFactory extends Factory
     public function definition(): array
     {
         return [
-             'name' => $this->faker->city(),
-             'description' => $this->faker->text(),
-             'address' => $this->faker->address(),
-             'main_colour' => $this->faker->hexColor(),
-             'secondary_colour' => $this->faker->hexColor(),
+            'name' => $this->faker->city(),
+            'description' => $this->faker->text(),
+            'address' => $this->faker->address(),
+            'main_colour' => $this->faker->hexColor(),
+            'secondary_colour' => $this->faker->hexColor(),
         ];
     }
 }

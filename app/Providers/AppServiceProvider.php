@@ -4,7 +4,6 @@ namespace App\Providers;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Events\QueryExecuted;
-use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Vite;
@@ -30,15 +29,15 @@ class AppServiceProvider extends ServiceProvider
         /**
          * If we're not in production make models all strict and log queries
          */
-        if (!\App::isProduction()) {
+        if (! \App::isProduction()) {
             Model::shouldBeStrict();
             DB::listen(function (QueryExecuted $query) {
                 Log::info(
                     'Query Executed', [
                         'sql' => $query->sql,
                         'bindings' => $query->bindings,
-                        'time' => $query->time
-                ]);
+                        'time' => $query->time,
+                    ]);
             });
         }
     }

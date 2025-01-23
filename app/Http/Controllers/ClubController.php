@@ -15,7 +15,7 @@ class ClubController extends Controller
     public function index()
     {
         return Inertia::render('Club/ClubIndex', [
-            'clubs' => Club::all()
+            'clubs' => Club::all(),
         ]);
     }
 
@@ -24,8 +24,8 @@ class ClubController extends Controller
      */
     public function create()
     {
-        return inertia("Club/Create", [
-            'club' => new Club()
+        return inertia('Club/Create', [
+            'club' => new Club,
         ]);
     }
 
