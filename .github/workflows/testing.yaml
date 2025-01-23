@@ -31,9 +31,9 @@ jobs:
       - name: ESLint
         run: ./vendor/bin/sail npm run eslint
         if: always()
-      - name: ESLint
+      - name: Pint
         run: ./vendor/bin/sail composer pint
         if: always()
-#      - name: Test
-#        run: ./vendor/bin/sail artisan test --parallel --coverage
-#        if: always()
+      - name: Test
+        run: ./vendor/bin/sail artisan test --parallel --coverage --min=80
+        if: always()
