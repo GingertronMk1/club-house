@@ -4,9 +4,9 @@ use App\Models\Club;
 use App\Models\User;
 use App\Policies\ClubPolicy;
 
-$user = new User();
-$policy = new ClubPolicy();
-$club = new Club();
+$user = new User;
+$policy = new ClubPolicy;
+$club = new Club;
 
 test('Anyone can viewAny', function () use ($user, $policy) {
     expect($policy->viewAny($user))->toBeTrue();

@@ -40,8 +40,8 @@ class HandleInertiaRequests extends Middleware
                 'location' => $request->url(),
             ],
             'navigationItems' => [
-                'Clubs' => 'club.index'
-            ]
+                'Clubs' => 'club.index',
+            ],
         ];
     }
 }

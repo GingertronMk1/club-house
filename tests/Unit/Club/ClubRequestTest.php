@@ -1,7 +1,7 @@
 <?php
 
-$storeRequest = new \App\Http\Requests\StoreClubRequest();
-$updateRequest = new \App\Http\Requests\UpdateClubRequest();
+$storeRequest = new \App\Http\Requests\StoreClubRequest;
+$updateRequest = new \App\Http\Requests\UpdateClubRequest;
 
 test('authorize is true for store', function () use ($storeRequest) {
     expect($storeRequest->authorize())->toBeTrue();

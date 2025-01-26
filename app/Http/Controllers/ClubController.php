@@ -42,6 +42,7 @@ class ClubController extends Controller
     {
         $club = new Club($request->all());
         $club->save();
+
         return redirect()->route('club.index');
     }
 
@@ -69,6 +70,7 @@ class ClubController extends Controller
     public function update(UpdateClubRequest $request, Club $club)
     {
         $club->update($request->all());
+
         return redirect()->route('club.index');
     }
 
