@@ -25,8 +25,8 @@ class StoreClubRequest extends FormRequest
             'name' => ['required', 'string'],
             'description' => ['nullable', 'string'],
             'address' => ['nullable', 'string'],
-            'main_colour' => ['nullable', 'hex_color'],
-            'secondary_colour' => ['nullable', 'hex_color'],
+            'main_colour' => ['required', 'hex_color'],
+            'secondary_colour' => ['required', 'hex_color'],
         ];
     }
 }
