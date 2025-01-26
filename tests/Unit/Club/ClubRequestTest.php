@@ -11,7 +11,7 @@ test('authorize is true for update', function () use ($updateRequest) {
     expect($updateRequest->authorize())->toBeTrue();
 });
 
-test('rules are same for store and update', function () use ($storeRequest, $updateRequest, $rules) {
+test('rules are same for store and update', function () use ($storeRequest, $updateRequest) {
     $rules = [
         'name' => ['required', 'string'],
         'description' => ['nullable', 'string'],
