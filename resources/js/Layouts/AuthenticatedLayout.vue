@@ -32,10 +32,13 @@ const showingNavigationDropdown = ref(false);
                                 class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex"
                             >
                                 <NavLink
-                                    :href="route('dashboard')"
-                                    :active="route().current('dashboard')"
+                                    v-for="(navigationItem, name) in $page.props
+                                        .navigationItems"
+                                    :key="navigationItem"
+                                    :href="route(navigationItem)"
+                                    :active="route().current(navigationItem)"
                                 >
-                                    Dashboard
+                                    {{ name }}
                                 </NavLink>
                             </div>
                         </div>

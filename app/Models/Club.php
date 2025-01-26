@@ -12,4 +12,12 @@ class Club extends Model
     use HasFactory;
 
     use SoftDeletes;
+
+    protected $fillable = [
+        'name',
+        'description',
+        'address',
+        'main_colour',
+        'secondary_colour',
+    ];
 }

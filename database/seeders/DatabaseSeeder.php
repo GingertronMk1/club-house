@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
         if (! App::isProduction()) {
             User::factory()->create([
                 'name' => 'Admin',
-                'email' => 'admin@clubhouse.local',
-                'password' => 12345,
+                'email' => 'admin@clubhouse.test',
+                'password' => 12345678,
                 'is_site_admin' => true,
             ]);
         }

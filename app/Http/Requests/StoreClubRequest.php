@@ -11,7 +11,7 @@ class StoreClubRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class StoreClubRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => ['required', 'string'],
+            'description' => ['nullable', 'string'],
+            'address' => ['nullable', 'string'],
+            'main_colour' => ['nullable', 'hex_color'],
+            'secondary_colour' => ['nullable', 'hex_color'],
         ];
     }
 }

@@ -9,7 +9,7 @@ const clubForm = useForm<Club>(props.club);
 </script>
 
 <template>
-    <form class="flex flex-col space-y-3">
+    <form class="mx-auto flex w-11/12 max-w-screen-xl flex-col space-y-3">
         <input
             id="name"
             v-model="clubForm.name"
