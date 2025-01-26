@@ -20,4 +20,12 @@ class Club extends Model
         'main_colour',
         'secondary_colour',
     ];
+
+    protected $attributes = [
+        'name' => '',
+        'description' => '',
+        'address' => '',
+        'main_colour' => '#ff0000',
+        'secondary_colour' => '#ffffff',
+    ];
 }

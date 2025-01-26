@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import ClubForm from "@/Components/Forms/ClubForm.vue";
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'
+import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 defineProps<{ club: Club }>();
 </script>
 

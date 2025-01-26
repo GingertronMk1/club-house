@@ -27,10 +27,6 @@ const submitForm = function () {
         class="mx-auto flex w-11/12 max-w-screen-xl flex-col space-y-3"
         @submit.prevent="submitForm"
     >
-        <pre
-            v-if="clubForm.isDirty"
-            v-text="clubForm.data()"
-        />
         <label
             class="flex flex-col"
             for="name"

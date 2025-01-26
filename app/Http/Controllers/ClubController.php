@@ -25,13 +25,7 @@ class ClubController extends Controller
     public function create()
     {
         return inertia('Club/ClubCreate', [
-            'club' => new Club([
-                'name' => '',
-                'description' => '',
-                'address' => '',
-                'main_colour' => '#ff0000',
-                'secondary_colour' => '#ffffff',
-            ]),
+            'club' => new Club(),
         ]);
     }
 
@@ -40,7 +34,13 @@ class ClubController extends Controller
      */
     public function store(StoreClubRequest $request)
     {
-        $club = new Club($request->all());
+        $club = new Club($request->all([
+            'name',
+            'description',
+            'address',
+            'main_colour',
+            'secondary_colour',
+        ]));
         $club->save();
 
         return redirect()->route('club.index');
@@ -69,7 +69,13 @@ class ClubController extends Controller
      */
     public function update(UpdateClubRequest $request, Club $club)
     {
-        $club->update($request->all());
+        $club->update($request->all([
+            'name',
+            'description',
+            'address',
+            'main_colour',
+            'secondary_colour',
+        ]));
 
         return redirect()->route('club.index');
     }
