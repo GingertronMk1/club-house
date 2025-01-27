@@ -25,7 +25,7 @@ class ClubController extends Controller
     public function create()
     {
         return inertia('Club/ClubCreate', [
-            'club' => new Club(),
+            'club' => new Club,
         ]);
     }
 
