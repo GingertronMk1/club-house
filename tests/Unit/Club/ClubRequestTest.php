@@ -11,8 +11,8 @@ test('authorize is true for update', function () use ($updateRequest) {
     expect($updateRequest->authorize())->toBeTrue();
 });
 
-test('rules are same for store and update', function () use ($storeRequest, $updateRequest) {
-    $rules = [
+test('store rules are accurate', function () use ($storeRequest, $updateRequest) {
+    $createRules = [
         'name' => ['required', 'string'],
         'description' => ['nullable', 'string'],
         'address' => ['nullable', 'string'],
@@ -20,6 +20,12 @@ test('rules are same for store and update', function () use ($storeRequest, $upd
         'secondary_colour' => ['required', 'hex_color'],
     ];
 
-    expect($storeRequest->rules())->toBe($rules)
-        ->and($updateRequest->rules())->toBe($rules);
+    $updateRules = [
+        ...$createRules,
+        'main_colour' => ['optional', 'hex_color'],
+        'secondary_colour' => ['optional', 'hex_color'],
+    ];
+
+    expect($storeRequest->rules())->toBe($createRules)
+        ->and($updateRequest->rules())->toBe($updateRules);
 });
