@@ -28,6 +28,9 @@ echo "Generate Key"
 echo "Create DB file"
 touch database/database.sqlite
 
+echo "Create testing DB file"
+touch database/database.testing.sqlite
+
 echo "Migrate"
 ./vendor/bin/sail artisan migrate:fresh
 

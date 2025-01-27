@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+
+./vendor/bin/sail npm run build
+
+touch database/database.testing.sqlite
+
+./vendor/bin/sail artisan test --parallel --coverage --without-tty --compact
+
+./vendor/bin/sail artisan pest:dusk --without-tty
