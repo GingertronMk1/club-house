@@ -22,8 +22,8 @@ test('store rules are accurate', function () use ($storeRequest, $updateRequest)
 
     $updateRules = [
         ...$createRules,
-        'main_colour' => ['optional', 'hex_color'],
-        'secondary_colour' => ['optional', 'hex_color'],
+        'main_colour' => ['hex_color'],
+        'secondary_colour' => ['hex_color'],
     ];
 
     expect($storeRequest->rules())->toBe($createRules)
