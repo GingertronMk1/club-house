@@ -25,8 +25,8 @@ class UpdateClubRequest extends FormRequest
             'name' => ['required', 'string'],
             'description' => ['nullable', 'string'],
             'address' => ['nullable', 'string'],
-            'main_colour' => ['optional', 'hex_color'],
-            'secondary_colour' => ['optional', 'hex_color'],
+            'main_colour' => ['hex_color'],
+            'secondary_colour' => ['hex_color'],
         ];
     }
 }
