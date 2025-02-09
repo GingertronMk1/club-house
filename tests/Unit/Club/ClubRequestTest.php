@@ -1,17 +1,19 @@
 <?php
 
-$storeRequest = new \App\Http\Requests\StoreClubRequest;
-$updateRequest = new \App\Http\Requests\UpdateClubRequest;
-
-test('authorize is true for store', function () use ($storeRequest) {
-    expect($storeRequest->authorize())->toBeTrue();
+beforeEach(function () {
+    $this->storeRequest = new \App\Http\Requests\StoreClubRequest;
+    $this->updateRequest = new \App\Http\Requests\UpdateClubRequest;
 });
 
-test('authorize is true for update', function () use ($updateRequest) {
-    expect($updateRequest->authorize())->toBeTrue();
+test('authorize is true for store', function () {
+    expect($this->storeRequest->authorize())->toBeTrue();
 });
 
-test('store rules are accurate', function () use ($storeRequest, $updateRequest) {
+test('authorize is true for update', function () {
+    expect($this->updateRequest->authorize())->toBeTrue();
+});
+
+test('store rules are accurate', function () {
     $createRules = [
         'name' => ['required', 'string'],
         'description' => ['nullable', 'string'],
@@ -22,10 +24,10 @@ test('store rules are accurate', function () use ($storeRequest, $updateRequest)
 
     $updateRules = [
         ...$createRules,
-        'main_colour' => ['optional', 'hex_color'],
-        'secondary_colour' => ['optional', 'hex_color'],
+        'main_colour' => ['hex_color'],
+        'secondary_colour' => ['hex_color'],
     ];
 
-    expect($storeRequest->rules())->toBe($createRules)
-        ->and($updateRequest->rules())->toBe($updateRules);
+    expect($this->storeRequest->rules())->toBe($createRules)
+        ->and($this->updateRequest->rules())->toBe($updateRules);
 });
